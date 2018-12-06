@@ -32,6 +32,7 @@ namespace SimpleAPIWithBackingSvc
 
             // @"Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;"
             var connection = Environment.GetEnvironmentVariable("SIMPLEAPI_DBCONN");
+            Console.WriteLine(string.Format("SIMPLEAPI_DBCONN = {0}", connection));
             services.AddDbContext<SimpleAPIContext>(options => options.UseSqlServer(connection));
         }
 
